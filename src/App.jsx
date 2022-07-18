@@ -1,5 +1,5 @@
 import React from "react";
-import EventLoader from './Components/EventLoader/EventLoader.jsx';
+import Container from './Components/Container/Container.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class App extends React.Component {
         <h1>
           Mason Bar Database Admin Tool
         </h1>
-        <EventLoader state={this.state} listener={this.textListener}/>
+        <Container state={this.state} listener={this.textListener}/>
       </>
     );
   }
