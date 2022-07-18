@@ -12,9 +12,13 @@ const EventLoader = (props) => {
     <div>
       <EventTitle state={props.state} listener={props.listener}/>
       <Month state={props.state} clickHandler={props.clickHandler}/>
+      <input value={props.state.month}></input>
       <Day state={props.state} clickHandler={props.clickHandler}/>
-      <StartTime/>
-      <EndTime/>
+      <input value={props.state.day}></input>
+      <StartTime state={props.state} clickHandler={props.clickHandler}/>
+      <input value={props.state.start}></input>
+      <EndTime state={props.state} clickHandler={props.clickHandler}/>
+      <input value={props.state.end}></input>
       <Description state={props.state} listener={props.listener}/>
       <EventButtons name="Review Event"/>
     </div>

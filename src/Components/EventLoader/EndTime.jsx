@@ -6,11 +6,15 @@ const times = require('./Times.js');
 
 
 
-const EndTime = () => {
+const EndTime = (props) => {
 
   return (
-    <div style={{display: "flex", flexDirection: "row"}}>
-      <DropDowns payload={times.times} name="End Time"/>
+    <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+      <DropDowns
+        payload={times.times}
+        name="end"
+        clickHandler={props.clickHandler}
+        value={props.state.end}/>
       <PMToggle/>
     </div>
   )
