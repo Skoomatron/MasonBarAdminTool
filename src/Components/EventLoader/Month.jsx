@@ -1,5 +1,6 @@
 import React from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
+import DropDowns from './DropDowns.jsx';
 
 const Month = () => {
 
@@ -10,17 +11,7 @@ const Month = () => {
     'November', 'December'];
 
   return (
-    <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-        Select Month
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        {months.map((month, index) => {
-          return <Dropdown.Item key={month + index} href="#/action-1">{month}</Dropdown.Item>
-        })}
-
-      </Dropdown.Menu>
-    </Dropdown>
+    <DropDowns payload={months} name="Month"/>
   )
 }
 

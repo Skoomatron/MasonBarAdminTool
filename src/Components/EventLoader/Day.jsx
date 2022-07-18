@@ -1,5 +1,6 @@
 import React from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
+import DropDowns from './DropDowns.jsx';
 
 const Day = () => {
 
@@ -11,18 +12,7 @@ const Day = () => {
     ]
 
   return (
-    <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-        Select Day
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        {
-          days.map((day, index) => {
-            return <Dropdown.Item key={day + index} href="#/action-1">{day}</Dropdown.Item>
-          })
-        }
-      </Dropdown.Menu>
-    </Dropdown>
+    <DropDowns payload={days} name="Day" style={{overflow: "auto", height: "50px"}}/>
   )
 }
 
