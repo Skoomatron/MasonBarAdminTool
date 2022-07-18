@@ -6,11 +6,13 @@ class App extends React.Component {
     super(props)
     this.state = {
       eventTitle: '',
+      eventDescription: '',
     }
     this.textListener = this.textListener.bind(this);
   }
 
   textListener(event) {
+    console.log(event)
     const currentText = event.target.value;
     this.setState({[event.target.name]: currentText})
   }
@@ -18,7 +20,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <h1>
+        <h1 style={{color: 'white'}}>
           Mason Bar Database Admin Tool
         </h1>
         <Container state={this.state} listener={this.textListener}/>

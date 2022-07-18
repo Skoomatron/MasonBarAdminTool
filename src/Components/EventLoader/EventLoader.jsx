@@ -5,23 +5,18 @@ import Description from './Description.jsx';
 import StartTime from './StartTime.jsx';
 import EndTime from './EndTime.jsx';
 import EventButtons from './EventButtons.jsx';
+import EventTitle from './EventTitle.jsx';
 
 const EventLoader = (props) => {
 
   return (
     <div>
-      <input
-        placeholder="Event Title"
-        value={props.state.eventTitle}
-        name="eventTitle"
-        onChange={props.listener}
-      >
-      </input>
+      <EventTitle state={props.state} listener={props.listener}/>
       <Month/>
       <Day/>
       <StartTime/>
       <EndTime/>
-      <Description/>
+      <Description state={props.state} listener={props.listener}/>
       <EventButtons name="Review Event"/>
     </div>
   )

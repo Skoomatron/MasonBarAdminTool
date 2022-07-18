@@ -1,17 +1,20 @@
 import React from 'react';
 
-const Description = () => {
-
+const Description = (props) => {
+  console.log(props)
   return (
     <form>
       <label>
         Event Description:
-        <input
+        <textarea
           placeholder="Event Description"
           type="text"
+          name="eventDescription"
+          value={props.state.eventDescription}
           style={{height: "100px", width: "300px"}}
+          onChange={props.listener}
         >
-        </input>
+        </textarea>
       </label>
     </form>
   )
