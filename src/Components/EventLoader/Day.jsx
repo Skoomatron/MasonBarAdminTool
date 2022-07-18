@@ -2,7 +2,7 @@ import React from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropDowns from './DropDowns.jsx';
 
-const Day = () => {
+const Day = (props) => {
 
   const days = [
       1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
@@ -12,7 +12,7 @@ const Day = () => {
     ]
 
   return (
-    <DropDowns payload={days} name="Day" style={{overflow: "auto", height: "50px"}}/>
+    <DropDowns value={props.state.day} payload={days} name="day" clickHandler={props.clickHandler} />
   )
 }
 

@@ -1,11 +1,10 @@
 import React from 'react';
 
 const Description = (props) => {
-  console.log(props)
   return (
     <form>
       <label>
-        Event Description:
+        <h1 style={{color: 'black', backgroundColor: 'white', fontSize: '24px'}}>Event Description:</h1>
         <textarea
           placeholder="Event Description"
           type="text"

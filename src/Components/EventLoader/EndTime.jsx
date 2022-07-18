@@ -1,12 +1,18 @@
 import React from 'react';
 import DropDowns from './DropDowns.jsx';
+import PMToggle from './PMToggle.jsx';
+const times = require('./Times.js');
+
+
+
 
 const EndTime = () => {
 
-  const endTimes = ['11:00am', '11:15am'];
-
   return (
-    <DropDowns payload={endTimes} name="End Time"/>
+    <div style={{display: "flex", flexDirection: "row"}}>
+      <DropDowns payload={times.times} name="End Time"/>
+      <PMToggle/>
+    </div>
   )
 }
 

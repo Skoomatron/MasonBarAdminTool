@@ -15,7 +15,7 @@ const Container = (props) => {
         fill
       >
         <Tab eventKey="event" title="Event Tool">
-          <EventLoader state={props.state} listener={props.listener} />
+          <EventLoader state={props.state} listener={props.listener} clickHandler={props.clickHandler}/>
         </Tab>
         <Tab eventKey="menu" title="Menu Tool">
           <MenuLoader />
