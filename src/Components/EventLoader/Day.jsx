@@ -12,7 +12,12 @@ const Day = (props) => {
     ]
 
   return (
-    <DropDowns value={props.state.day} payload={days} name="day" clickHandler={props.clickHandler} />
+    <DropDowns
+    value={props.state.day}
+    payload={days}
+    name="day"
+    name2="Day"
+    clickHandler={props.clickHandler} />
   )
 }
 

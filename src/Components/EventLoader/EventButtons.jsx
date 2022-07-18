@@ -5,7 +5,7 @@ const EventButtons = (props) => {
 
   return (
     //warning only defines the styling, not an actual warning
-    <Button variant="warning">{props.name}</Button>
+    <Button onClick={props.clickHandler} name={props.name} variant="warning">{props.name2}</Button>
   )
 }
 

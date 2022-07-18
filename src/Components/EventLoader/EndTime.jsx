@@ -13,9 +13,10 @@ const EndTime = (props) => {
       <DropDowns
         payload={times.times}
         name="end"
+        name2="End Time"
         clickHandler={props.clickHandler}
         value={props.state.end}/>
-      <PMToggle/>
+      <PMToggle clickHandler={props.clickHandler} name="endPM"/>
     </div>
   )
 }

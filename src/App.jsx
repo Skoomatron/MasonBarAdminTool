@@ -13,6 +13,7 @@ class App extends React.Component {
       end: '',
       startPM: false,
       endPM: false,
+      eventModal: false,
     }
     this.textListener = this.textListener.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
@@ -25,9 +26,18 @@ class App extends React.Component {
   }
 
   clickHandler(event) {
-    console.log(event.target);
-    const currentValue = event.target.innerHTML;
-    this.setState({[event.target.name]: currentValue})
+    console.log(event)
+    if (
+      event.target.name === "endPM"
+      || event.target.name === "startPM"
+      || event.target.name === "eventModal") {
+      const currentName = event.target.name;
+      const currentValue = this.state[currentName];
+      this.setState({[currentName]: !currentValue})
+    } else {
+      const currentValue = event.target.innerHTML;
+      this.setState({[event.target.name]: currentValue})
+    }
   }
 
   render() {

@@ -10,9 +10,10 @@ const StartTime = (props) => {
       <DropDowns
       payload={times.times}
       name="start"
+      name2="Start Time"
       clickHandler={props.clickHandler}
       value={props.state.start}/>
-      <PMToggle />
+      <PMToggle clickHandler={props.clickHandler} name="startPM"/>
     </div>
   )
 }

@@ -11,7 +11,12 @@ const Month = (props) => {
     'November', 'December'];
 
   return (
-    <DropDowns value={props.state.month} payload={months} name="month" clickHandler={props.clickHandler}/>
+    <DropDowns
+    value={props.state.month}
+    payload={months}
+    name="month"
+    name2="Month"
+    clickHandler={props.clickHandler}/>
   )
 }
 
