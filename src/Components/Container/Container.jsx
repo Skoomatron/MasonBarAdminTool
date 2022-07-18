@@ -5,7 +5,6 @@ import MenuLoader from '../MenuLoader/MenuLoader.jsx';
 import EventLoader from '../EventLoader/EventLoader.jsx';
 
 const Container = (props) => {
-  console.log(props);
 
   return (
     <Tabs
@@ -15,7 +14,11 @@ const Container = (props) => {
         fill
       >
         <Tab eventKey="event" title="Event Tool">
-          <EventLoader state={props.state} listener={props.listener} clickHandler={props.clickHandler}/>
+          <EventLoader
+            state={props.state}
+            listener={props.listener}
+            clickHandler={props.clickHandler}
+            submitHandler={props.submitHandler}/>
         </Tab>
         <Tab eventKey="menu" title="Menu Tool">
           <MenuLoader />

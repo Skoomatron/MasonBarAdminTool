@@ -3,7 +3,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropDowns from './DropDowns.jsx';
 
 const Month = (props) => {
-  console.log(props)
+
   const months = [
     'January', 'February', 'March',
     'April', 'May', 'June', 'July',
@@ -12,11 +12,11 @@ const Month = (props) => {
 
   return (
     <DropDowns
-    value={props.state.month}
-    payload={months}
-    name="month"
-    name2="Month"
-    clickHandler={props.clickHandler}/>
+      value={props.state.month}
+      payload={months}
+      name="month"
+      name2="Month"
+      clickHandler={props.clickHandler}/>
   )
 }
 

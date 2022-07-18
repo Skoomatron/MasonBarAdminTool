@@ -3,6 +3,6 @@ const controller = require('./Controller/index.js');
 
 console.log('In The Router')
 
-router.post('/welcome', controller.welcomePost);
+router.post('/event', controller.addEvent);
 
 module.exports = router;

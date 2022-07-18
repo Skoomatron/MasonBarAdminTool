@@ -1,8 +1,8 @@
 const model = require('../Model/index.js');
 
-const welcomePost = (req, res) => {
+const addEvent = (req, res) => {
   console.log('made it to router with data: ', req.body);
-  model.postWelcome(req.body)
+  model.postEvent(req.body)
   .then((success) => {
     res.status(201).send();
   })
@@ -12,5 +12,5 @@ const welcomePost = (req, res) => {
 }
 
 module.exports = {
-  welcomePost,
+  addEvent,
 }
