@@ -7,12 +7,12 @@ const WelcomeModal = (props) => {
   const message = props.state.modalMessage;
 
   const imageBody = `
-    \rImage URL: ${props.state.photoURL}
-    \rImage Caption: ${props.state.photoCaption}`;
+    \nImage URL: ${props.state.photoURL}
+    \nImage Caption: ${props.state.photoCaption}`;
 
   const messageBody = `
-    Welcome Message:
-    \r${props.state.welcomeMessage}`;
+    \nWelcome Message:
+    \n${props.state.welcomeMessage}`;
 
   const evaluation = "Review Image Details";
 
@@ -31,9 +31,12 @@ const WelcomeModal = (props) => {
         <Button variant="secondary" name="welcomeModal" onClick={props.clickHandler}>
           Close
         </Button>
-        <Button variant="primary" onClick={() => {
-          console.log('clicked in welcome modal')}}>
-          Save Changes
+        <Button
+          name={props.state.modalMessage}
+          variant="primary"
+          onClick={() => {
+            props.onSubmit(event)}}>
+            Save Changes
         </Button>
       </Modal.Footer>
     </Modal>
