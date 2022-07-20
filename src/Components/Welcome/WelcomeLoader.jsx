@@ -38,22 +38,20 @@ class WelcomeLoader extends React.Component {
         photoCaption: this.state.photoCaption,
       })
       .then((success) => {
-        console.log('Image Posted Successfully')
         this.setState({welcomeModal: !this.state.welcomeModal});
       })
       .catch((error) => {
-        console.log('Error Posting New Images: ', error)
+        alert('Error Posting New Images: ', error)
       })
     } else {
       axios.post('/welcome', {
         welcomeMessage: this.state.welcomeMessage
       })
       .then((success) => {
-        console.log('Message Posted Successfully')
         this.setState({welcomeModal: !this.state.welcomeModal});
       })
       .catch((error) => {
-        console.log('Error Posting New Message: ', error)
+        alert('Error Posting New Message: ', error)
       })
     }
   }

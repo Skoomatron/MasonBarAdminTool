@@ -72,10 +72,10 @@ class EventLoader extends React.Component {
         eventDescription: this.state.eventDescription,
       })
       .then((success) => {
-        console.log('success!!')
+        this.setState({eventModal: false})
       })
       .catch((error) => {
-        console.log('error occurred ' + error)
+        alert('error occurred ' + error);
       })
     }
   }

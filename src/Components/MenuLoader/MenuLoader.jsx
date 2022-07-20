@@ -50,11 +50,10 @@ class MenuLoader extends React.Component {
       price: this.state.price,
     })
     .then((success) => {
-      console.log('Message Posted Successfully', success)
       this.setState({show: !this.state.show});
     })
     .catch((error) => {
-      console.log('Error Posting New Message: ', error)
+      alert('Error Posting New Message: ', error);
     })
 }
 
