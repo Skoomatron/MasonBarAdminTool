@@ -82,6 +82,16 @@ const getEvent = (req, res) => {
   })
 }
 
+const deleteData = (req, res) => {
+  model.removeData(req.body)
+  .then((success) => {
+    res.status(201).send(success);
+  })
+  .catch((error) => {
+    res.status(409).send(error);
+  })
+}
+
 
 
 
@@ -96,4 +106,5 @@ module.exports = {
   getMenu,
   getWelcome,
   getImage,
+  deleteData
 }

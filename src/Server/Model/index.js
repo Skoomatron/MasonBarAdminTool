@@ -64,7 +64,7 @@ const postMenu = async (params) => {
 
 const findMenu = async (params) => {
   try {
-    return Menu.find({})
+    return await Menu.find({})
   } catch (error) {
     return error;
   }
@@ -72,7 +72,7 @@ const findMenu = async (params) => {
 
 const findEvent = async (params) => {
   try {
-    return Event.find({})
+    return await Event.find({})
   } catch (error) {
     return error;
   }
@@ -80,7 +80,7 @@ const findEvent = async (params) => {
 
 const findImage = async (params) => {
   try {
-    return WelcomeImage.find({})
+    return await WelcomeImage.find({})
   } catch (error) {
     return error;
   }
@@ -88,7 +88,18 @@ const findImage = async (params) => {
 
 const findWelcome = async (params) => {
   try {
-    return Welcome.find({})
+    return await Welcome.find({})
+  } catch (error) {
+    return error;
+  }
+}
+
+const removeData = async (params) => {
+  const collection = params.key;
+  const payload = params._id;
+  console.log(collection, payload, 'model')
+  try {
+    collection.find({_id: payload}).findOneAndDelete({_id: payload});
   } catch (error) {
     return error;
   }
@@ -103,4 +114,5 @@ module.exports = {
   findWelcome,
   findImage,
   findEvent,
+  removeData
 }

@@ -16,8 +16,8 @@ const Container = (props) => {
         <Tab eventKey="welcome" title="Welcome Tool">
           <WelcomeLoader message={props.state.message[0]} pictures={props.state.pictures}/>
         </Tab>
-        <Tab eventKey="event" title="Event Tool">
-          <EventLoader events={props.state.events}/>
+        <Tab eventKey="event" title="Event Tool" >
+          <EventLoader events={props.state.events} delete={props.delete}/>
         </Tab>
         <Tab eventKey="menu" title="Menu Tool">
           <MenuLoader menus={props.state.menu}/>

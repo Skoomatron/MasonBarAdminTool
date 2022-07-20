@@ -12,6 +12,8 @@ class App extends React.Component {
       pictures: [],
     }
     this.getAllData = this.getAllData.bind(this);
+    this.deleteData = this.deleteData.bind(this);
+    this.updateData = this.updateData.bind(this);
   }
 
   componentDidMount() {
@@ -38,6 +40,21 @@ class App extends React.Component {
     })
   }
 
+  deleteData(data, key) {
+    axios.post('/delete', {_id: data._id, key: key})
+    .then((success) => {
+      alert('Information Has Been Delete')
+    })
+    .catch((error) => {
+      alert('Failed to delete information, the following error occured: ', error)
+    })
+  }
+
+  updateData(data) {
+    console.log(data)
+    // axios.post()
+  }
+
   render() {
     return (
       <>
@@ -47,6 +64,7 @@ class App extends React.Component {
         <Container
           state={this.state}
           listener={this.textListener}
+          delete={this.deleteData}
           clickHandler={this.clickHandler}
           submitHandler={this.submitHandler}/>
       </>

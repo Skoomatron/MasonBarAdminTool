@@ -12,7 +12,9 @@ const AllEvents = (props) => {
             <div key={event + index} style={{border: "solid 2px black"}}>
               {event.month} {event.day}
               <div>{event.eventTitle}</div>
-              <button style={{margin: "10px"}}>Delete</button>
+              <button style={{margin: "10px"}} onClick={() => {
+                props.delete(event, "Event")
+              }}>Delete</button>
             </div>
           )
         })

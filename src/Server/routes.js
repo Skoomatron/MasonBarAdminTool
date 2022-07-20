@@ -13,4 +13,6 @@ router.get('/images', controller.getImage);
 router.get('/welcome', controller.getWelcome);
 router.get('/menu', controller.getMenu);
 
+router.post('/delete', controller.deleteData);
+
 module.exports = router;

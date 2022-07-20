@@ -138,7 +138,7 @@ class EventLoader extends React.Component {
             name2="Review Event"/>
         </div>
         <div style={{float: "left"}}>
-          <AllEvents events={this.props.events}/>
+          <AllEvents events={this.props.events} delete={this.props.delete}/>
         </div>
       </div>
     )
