@@ -80,7 +80,7 @@ class MenuLoader extends React.Component {
 
           <ReviewMenuButton name='review' name2='Review Menu Item' clickHandler={this.clickHandler}/>
         </div>
-        <div style={{float: "left"}}>
+        <div style={{float: "left", width: 'fit-content'}}>
           <AllMenu menus={this.props.menus}/>
         </div>
       </div>

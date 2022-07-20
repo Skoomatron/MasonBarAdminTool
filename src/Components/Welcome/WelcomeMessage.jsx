@@ -2,7 +2,6 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 
 const WelcomeMessage = (props) => {
-  console.log(props.message)
   return (
     <div style={{display: 'flex', flexDirection: "column", width: "400px"}}>
 

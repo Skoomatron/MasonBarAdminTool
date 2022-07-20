@@ -7,7 +7,7 @@ const AllImage = (props) => {
       <div style={{height: '40vw', overflow: 'auto'}}>
         {props.pictures.map((picture, index) => {
           return (
-            <div style={{border: 'solid 2px black'}}>
+            <div key={picture.photoURL + index} style={{border: 'solid 2px black'}}>
               <img style={{height: '100px', width: '100px'}} src={picture.photoURL}></img>
               <div>{picture.photoCaption}</div>
               <button>Delete</button>

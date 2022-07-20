@@ -6,7 +6,6 @@ import EventLoader from '../EventLoader/EventLoader.jsx';
 import WelcomeLoader from '../Welcome/WelcomeLoader.jsx';
 
 const Container = (props) => {
-  console.log(props, 'container props')
   return (
     <Tabs
         defaultActiveKey="welcome"
