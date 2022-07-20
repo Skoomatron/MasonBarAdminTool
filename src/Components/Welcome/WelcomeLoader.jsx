@@ -2,8 +2,7 @@ import React from 'react';
 import WelcomeMessage from './WelcomeMessage.jsx';
 import WelcomeModal from './WelcomeModal.jsx';
 import AddImage from './AddImage.jsx';
-import AllImage from './AddImage.jsx';
-import CurrentMessage from './CurrentMessage.jsx';
+import AllImage from './AllImage.jsx';
 import axios from 'axios';
 
 class WelcomeLoader extends React.Component {
@@ -19,10 +18,6 @@ class WelcomeLoader extends React.Component {
     this.textListener = this.textListener.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-  }
-
-  componentDidMount() {
-    console.log(this.props, 'compoinent did mount')
   }
 
   textListener(event) {
@@ -67,15 +62,14 @@ class WelcomeLoader extends React.Component {
   render() {
     return (
       <div>
-        <div>
+        <div style={{float: 'left'}}>
           <WelcomeModal state={this.state} clickHandler={this.clickHandler} onSubmit={this.onSubmit}/>
-          <WelcomeMessage state={this.state} listener={this.textListener} clickHandler={this.clickHandler}/>
+          <WelcomeMessage state={this.state} listener={this.textListener} message={this.props.message} clickHandler={this.clickHandler}/>
           <br></br>
           <AddImage state={this.state} listener={this.textListener} clickHandler={this.clickHandler}/>
         </div>
-        <div>
-          <CurrentMessage message={this.props.message}/>
-          {/* <AllImage pictures={this.props.pictures}/> */}
+        <div style={{float: 'left'}}>
+          <AllImage pictures={this.props.pictures} />
         </div>
       </div>
     )

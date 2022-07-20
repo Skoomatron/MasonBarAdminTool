@@ -15,7 +15,7 @@ const Container = (props) => {
         fill
       >
         <Tab eventKey="welcome" title="Welcome Tool">
-          <WelcomeLoader message={props.state.message} pictures={props.state.pictures}/>
+          <WelcomeLoader message={props.state.message[0]} pictures={props.state.pictures}/>
         </Tab>
         <Tab eventKey="event" title="Event Tool">
           <EventLoader events={props.state.events}/>

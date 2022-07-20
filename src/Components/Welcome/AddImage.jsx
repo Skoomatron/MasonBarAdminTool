@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 
 
 const AddImage = (props) => {
-  console.log(props, 'add image props')
   return (
     <div style={{display: 'flex', flexDirection: "column", width: "400px"}}>
 
@@ -32,7 +31,7 @@ const AddImage = (props) => {
       <button
         type="button"
         name="Review Image Details"
-        class="btn btn-warning"
+        className="btn btn-warning"
         onClick={props.clickHandler}>Review Image</button>
     </div>
   )

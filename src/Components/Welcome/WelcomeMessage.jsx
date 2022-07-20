@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 
 const WelcomeMessage = (props) => {
-
+  console.log(props.message)
   return (
     <div style={{display: 'flex', flexDirection: "column", width: "400px"}}>
 
@@ -11,7 +11,7 @@ const WelcomeMessage = (props) => {
           <textarea
             value={props.state.welcomeMessage}
             type="text"
-            placeholder="Input or Update Welcome Message"
+            placeholder={"Input or Update Welcome Message"}
             name="welcomeMessage"
             onChange={props.listener}
             className="welcomeText"
@@ -25,7 +25,7 @@ const WelcomeMessage = (props) => {
         style={{padding: "10px"}}
         type="button"
         name="Review Message Details"
-        class="btn btn-warning"
+        className="btn btn-warning"
         onClick={props.clickHandler}>Review Message</button>
     </div>
   )
