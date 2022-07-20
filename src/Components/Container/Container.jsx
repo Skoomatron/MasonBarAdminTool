@@ -6,7 +6,7 @@ import EventLoader from '../EventLoader/EventLoader.jsx';
 import WelcomeLoader from '../Welcome/WelcomeLoader.jsx';
 
 const Container = (props) => {
-
+  console.log(props, 'container props')
   return (
     <Tabs
         defaultActiveKey="welcome"
@@ -15,17 +15,13 @@ const Container = (props) => {
         fill
       >
         <Tab eventKey="welcome" title="Welcome Tool">
-          <WelcomeLoader/>
+          <WelcomeLoader message={props.state.message} pictures={props.state.pictures}/>
         </Tab>
         <Tab eventKey="event" title="Event Tool">
-          <EventLoader
-            state={props.state}
-            listener={props.listener}
-            clickHandler={props.clickHandler}
-            submitHandler={props.submitHandler}/>
+          <EventLoader events={props.state.events}/>
         </Tab>
         <Tab eventKey="menu" title="Menu Tool">
-          <MenuLoader />
+          <MenuLoader menus={props.state.menu}/>
         </Tab>
       </Tabs>
   )

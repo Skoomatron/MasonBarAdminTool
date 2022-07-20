@@ -26,7 +26,7 @@ const WelcomeMessage = (props) => {
         type="button"
         name="Review Message Details"
         class="btn btn-warning"
-        onClick={props.clickHandler}>Review</button>
+        onClick={props.clickHandler}>Review Message</button>
     </div>
   )
 }

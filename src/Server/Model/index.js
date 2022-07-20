@@ -1,8 +1,7 @@
 const db = require('../../DB/index.js');
-const {Event, Welcome, WelcomeImage} = require('../../DB/schema.js');
+const {Event, Welcome, WelcomeImage, Menu} = require('../../DB/schema.js');
 
 const postEvent = async (params) => {
-  console.log('made it to models with data: ', params)
   const filter = {eventTitle: params.eventTitle};
   const update = {
     day: params.day,
@@ -47,8 +46,61 @@ const postWelcome = async (params) => {
   }
 }
 
+const postMenu = async (params) => {
+  const filter = {name: params.name}
+  const update = {
+    name: params.name,
+    category: params.category,
+    description: params.description,
+    price: params.price
+  }
+  const options = {upsert: true};
+  try {
+    await Menu.findOneAndUpdate(filter, update, options)
+  } catch (error) {
+    return error;
+  }
+}
+
+const findMenu = async (params) => {
+  try {
+    return Menu.find({})
+  } catch (error) {
+    return error;
+  }
+}
+
+const findEvent = async (params) => {
+  try {
+    return Event.find({})
+  } catch (error) {
+    return error;
+  }
+}
+
+const findImage = async (params) => {
+  try {
+    return WelcomeImage.find({})
+  } catch (error) {
+    return error;
+  }
+}
+
+const findWelcome = async (params) => {
+  try {
+    return Welcome.find({})
+  } catch (error) {
+    return error;
+  }
+}
+
 module.exports = {
   postEvent,
   postImage,
   postWelcome,
+  postMenu,
+  findMenu,
+  findWelcome,
+  findImage,
+  findEvent,
 }

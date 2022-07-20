@@ -8,6 +8,7 @@ import EventButtons from './EventButtons.jsx';
 import EventTitle from './EventTitle.jsx';
 import ReviewEventModal from './ReviewEventModal.jsx';
 import axios from 'axios';
+import AllEvents from './AllEvents.jsx';
 
 
 class EventLoader extends React.Component {
@@ -96,44 +97,49 @@ class EventLoader extends React.Component {
   render() {
     return (
       <div>
-        <ReviewEventModal
-          clickHandler={this.clickHandler}
-          state={this.state}
-          submitHandler={this.submitHandler}/>
+        <div style={{float: "left"}}>
+          <ReviewEventModal
+            clickHandler={this.clickHandler}
+            state={this.state}
+            submitHandler={this.submitHandler}/>
 
-        <EventTitle
-          state={this.state}
-          listener={this.textListener}/>
+          <EventTitle
+            state={this.state}
+            listener={this.textListener}/>
 
-        <Month
-          state={this.state}
-          clickHandler={this.clickHandler}/>
-        <input defaultValue={this.state.month}></input>
+          <Month
+            state={this.state}
+            clickHandler={this.clickHandler}/>
+          <input defaultValue={this.state.month}></input>
 
-        <Day
-          state={this.state}
-          clickHandler={this.clickHandler}/>
-        <input defaultValue={this.state.day}></input>
+          <Day
+            state={this.state}
+            clickHandler={this.clickHandler}/>
+          <input defaultValue={this.state.day}></input>
 
-        <StartTime
-          state={this.state}
-          clickHandler={this.clickHandler}/>
-        <input defaultValue={this.state.start}></input>
+          <StartTime
+            state={this.state}
+            clickHandler={this.clickHandler}/>
+          <input defaultValue={this.state.start}></input>
 
-        <EndTime
-          state={this.state}
-          clickHandler={this.clickHandler}/>
-        <input defaultValue={this.state.end}></input>
+          <EndTime
+            state={this.state}
+            clickHandler={this.clickHandler}/>
+          <input defaultValue={this.state.end}></input>
 
-        <Description
-          state={this.state}
-          listener={this.textListener}/>
+          <Description
+            state={this.state}
+            listener={this.textListener}/>
 
-        <EventButtons
-          state={this.state}
-          clickHandler={this.clickHandler}
-          name="eventModal"
-          name2="Review Event"/>
+          <EventButtons
+            state={this.state}
+            clickHandler={this.clickHandler}
+            name="eventModal"
+            name2="Review Event"/>
+        </div>
+        <div style={{float: "left"}}>
+          <AllEvents events={this.props.events}/>
+        </div>
       </div>
     )
   }

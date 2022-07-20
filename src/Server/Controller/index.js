@@ -32,8 +32,68 @@ const addWelcome = (req, res) => {
   })
 }
 
+const addMenu = (req, res) => {
+  model.postMenu(req.body)
+  .then((success) => {
+    res.status(201).send();
+  })
+  .catch((error) => {
+    res.status(409).send(error);
+  })
+}
+
+const getMenu = (req, res) => {
+  model.findMenu()
+  .then((success) => {
+    res.status(201).send(success);
+  })
+  .catch((error) => {
+    res.status(409).send(error);
+  })
+}
+
+const getImage = (req, res) => {
+  model.findImage()
+  .then((success) => {
+    res.status(201).send(success);
+  })
+  .catch((error) => {
+    res.status(409).send(error);
+  })
+}
+
+const getWelcome = (req, res) => {
+  model.findWelcome()
+  .then((success) => {
+    res.status(201).send(success);
+  })
+  .catch((error) => {
+    res.status(409).send(error);
+  })
+}
+
+const getEvent = (req, res) => {
+  model.findEvent()
+  .then((success) => {
+    res.status(201).send(success);
+  })
+  .catch((error) => {
+    res.status(409).send(error);
+  })
+}
+
+
+
+
+
+
 module.exports = {
   addEvent,
   addImage,
   addWelcome,
+  addMenu,
+  getEvent,
+  getMenu,
+  getWelcome,
+  getImage,
 }
