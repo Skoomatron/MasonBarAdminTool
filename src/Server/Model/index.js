@@ -95,11 +95,27 @@ const findWelcome = async (params) => {
 }
 
 const removeEventData = async (params) => {
-  const collection = params.key;
   const payload = params._id;
-  console.log(collection, payload, 'model')
   try {
-    Event.find({_id: payload}).findOneAndDelete({_id: payload});
+    Event.find({_id: payload}).deleteOne().exec();
+  } catch (error) {
+    return error;
+  }
+}
+
+const removeImageData = async (params) => {
+  const payload = params._id;
+  try {
+    WelcomeImage.find({_id: payload}).deleteOne().exec();
+  } catch (error) {
+    return error;
+  }
+}
+
+const removeMenuData = async (params) => {
+  const payload = params._id;
+  try {
+    Menu.find({_id: payload}).deleteOne().exec();
   } catch (error) {
     return error;
   }
@@ -114,5 +130,7 @@ module.exports = {
   findWelcome,
   findImage,
   findEvent,
-  removeEventData
+  removeEventData,
+  removeImageData,
+  removeMenuData,
 }

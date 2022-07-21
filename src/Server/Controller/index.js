@@ -91,6 +91,22 @@ const deleteData = (req, res) => {
     .catch((error) => {
       res.status(409).send(error);
     })
+  } else if (req.body.key === 'Image') {
+    model.removeImageData(req.body)
+    .then((success) => {
+      res.status(201).send(success);
+    })
+    .catch((error) => {
+      res.status(409).send(error);
+    })
+  } else if (req.body.key === 'Menu') {
+    model.removeMenuData(req.body)
+    .then((success) => {
+      res.status(201).send(success);
+    })
+    .catch((error) => {
+      res.status(409).send(error);
+    })
   }
 }
 

@@ -48,6 +48,7 @@ class App extends React.Component {
     .catch((error) => {
       alert('Failed to delete information, the following error occured: ', error)
     })
+    this.getAllData();
   }
 
   updateData(data) {
@@ -66,7 +67,8 @@ class App extends React.Component {
           listener={this.textListener}
           delete={this.deleteData}
           clickHandler={this.clickHandler}
-          submitHandler={this.submitHandler}/>
+          submitHandler={this.submitHandler}
+          update={this.getAllData}/>
       </>
     );
   }

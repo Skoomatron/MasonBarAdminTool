@@ -67,7 +67,7 @@ class WelcomeLoader extends React.Component {
           <AddImage state={this.state} listener={this.textListener} clickHandler={this.clickHandler}/>
         </div>
         <div style={{float: 'left'}}>
-          <AllImage pictures={this.props.pictures} />
+          <AllImage pictures={this.props.pictures} delete={this.props.delete}/>
         </div>
       </div>
     )

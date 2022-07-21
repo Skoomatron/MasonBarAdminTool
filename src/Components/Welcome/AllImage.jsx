@@ -10,7 +10,9 @@ const AllImage = (props) => {
             <div key={picture.photoURL + index} style={{border: 'solid 2px black'}}>
               <img style={{height: '100px', width: '100px'}} src={picture.photoURL}></img>
               <div>{picture.photoCaption}</div>
-              <button>Delete</button>
+              <button onClick={() => {
+                props.delete(picture, 'Image');
+              }}>Delete</button>
             </div>
             )
         })}

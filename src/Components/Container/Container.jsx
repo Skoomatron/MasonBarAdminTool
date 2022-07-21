@@ -14,13 +14,13 @@ const Container = (props) => {
         fill
       >
         <Tab eventKey="welcome" title="Welcome Tool">
-          <WelcomeLoader message={props.state.message[0]} pictures={props.state.pictures}/>
+          <WelcomeLoader message={props.state.message[0]} pictures={props.state.pictures} delete={props.delete}/>
         </Tab>
         <Tab eventKey="event" title="Event Tool" >
           <EventLoader events={props.state.events} delete={props.delete}/>
         </Tab>
         <Tab eventKey="menu" title="Menu Tool">
-          <MenuLoader menus={props.state.menu}/>
+          <MenuLoader menus={props.state.menu} delete={props.delete}/>
         </Tab>
       </Tabs>
   )

@@ -16,7 +16,9 @@ const AllMenu = (props) => {
             <br></br>
             Item Price: {item.price}
             <br></br>
-            <button style={{margin: "10px"}}>Delete</button>
+            <button style={{margin: "10px"}} onClick={() => {
+              props.delete(item, 'Menu')
+            }}>Delete</button>
             </div>
           )
         })}
