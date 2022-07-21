@@ -94,12 +94,12 @@ const findWelcome = async (params) => {
   }
 }
 
-const removeData = async (params) => {
+const removeEventData = async (params) => {
   const collection = params.key;
   const payload = params._id;
   console.log(collection, payload, 'model')
   try {
-    collection.find({_id: payload}).findOneAndDelete({_id: payload});
+    Event.find({_id: payload}).findOneAndDelete({_id: payload});
   } catch (error) {
     return error;
   }
@@ -114,5 +114,5 @@ module.exports = {
   findWelcome,
   findImage,
   findEvent,
-  removeData
+  removeEventData
 }
