@@ -78,6 +78,7 @@ class EventLoader extends React.Component {
         alert('error occurred ' + error);
       })
     }
+    this.props.update();
   }
 
   clickHandler(event) {

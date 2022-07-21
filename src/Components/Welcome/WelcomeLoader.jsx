@@ -54,6 +54,7 @@ class WelcomeLoader extends React.Component {
         alert('Error Posting New Message: ', error)
       })
     }
+    this.props.update();
   }
 
 

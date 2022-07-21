@@ -43,7 +43,7 @@ class App extends React.Component {
   deleteData(data, key) {
     axios.post('/delete', {_id: data._id, key: key})
     .then((success) => {
-      alert('Information Has Been Delete')
+      alert('Information Has Been Deleted')
     })
     .catch((error) => {
       alert('Failed to delete information, the following error occured: ', error)

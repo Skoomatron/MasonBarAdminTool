@@ -55,6 +55,7 @@ class MenuLoader extends React.Component {
     .catch((error) => {
       alert('Error Posting New Message: ', error);
     })
+    this.props.update();
 }
 
   render() {
