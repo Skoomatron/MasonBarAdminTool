@@ -111,22 +111,22 @@ class EventLoader extends React.Component {
           <Month
             state={this.state}
             clickHandler={this.clickHandler}/>
-          <input defaultValue={this.state.month}></input>
+          <div>{this.state.month}</div>
 
           <Day
             state={this.state}
             clickHandler={this.clickHandler}/>
-          <input defaultValue={this.state.day}></input>
+          <div>{this.state.day}</div>
 
           <StartTime
             state={this.state}
             clickHandler={this.clickHandler}/>
-          <input defaultValue={this.state.start}></input>
+          <div>{this.state.start}</div>
 
           <EndTime
             state={this.state}
             clickHandler={this.clickHandler}/>
-          <input defaultValue={this.state.end}></input>
+          <div>{this.state.end}</div>
 
           <Description
             state={this.state}

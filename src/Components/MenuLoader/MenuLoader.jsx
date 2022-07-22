@@ -75,7 +75,7 @@ class MenuLoader extends React.Component {
           <br></br>
 
           <PriceDropDown state={this.state} clickHandler={this.clickHandler}/>
-          <input defaultValue={this.state.price}></input>
+          <div>{this.state.price}</div>
           <br></br>
 
           <ReviewMenuButton name='review' name2='Review Menu Item' clickHandler={this.clickHandler}/>
