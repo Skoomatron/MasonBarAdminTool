@@ -65,7 +65,7 @@ class MenuLoader extends React.Component {
         <div style={{float: "left"}}>
           <MenuReviewModal state={this.state} clickHandler={this.clickHandler} submitHandler={this.submitHandler}/>
           <CategoryDropDown state={this.state} clickHandler={this.clickHandler}/>
-          <input defaultValue={this.state.category}></input>
+          <div >{this.state.category}</div>
           <br></br>
 
           <ItemName state={this.state} listener={this.textListener}/>
