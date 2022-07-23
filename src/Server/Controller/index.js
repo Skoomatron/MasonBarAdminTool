@@ -11,7 +11,6 @@ const addEvent = (req, res) => {
 }
 
 const addImage = (req, res) => {
-  console.log('made it to addImage with data: ', req.body);
   model.postImage(req.body)
   .then((success) => {
     res.status(201).send();
@@ -22,7 +21,6 @@ const addImage = (req, res) => {
 }
 
 const addWelcome = (req, res) => {
-  console.log('made it to addWelcome with data: ', req.body);
   model.postWelcome(req.body)
   .then((success) => {
     res.status(201).send();
@@ -109,11 +107,6 @@ const deleteData = (req, res) => {
     })
   }
 }
-
-
-
-
-
 
 module.exports = {
   addEvent,
