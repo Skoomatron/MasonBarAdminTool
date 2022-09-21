@@ -11,12 +11,14 @@
     "build-dev": "webpack --mode development --watch",
     "build-prod": "webpack --mode production",
     "server": "nodemon src/Server/index.js",
-    "serverDeploy": "pm2 src/Server/index.js",
+    "serverDeploy": "pm2 index.js"
   },
   "dependencies": {
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
+    "express": "^4.18.1",
     "mongoose": "^6.4.4",
+    "pm2": "^5.2.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.2.0"
